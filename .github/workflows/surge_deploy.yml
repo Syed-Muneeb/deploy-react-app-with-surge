@@ -26,6 +26,6 @@ jobs:
         run: npm install -g surge
         
       - name: deploying to surge
-        run: ./build react-app-deploy-with-surge.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: ./build project-muneeb.surge.sh --token ${{ secrets.SURGE_TOKEN }}
         
       
