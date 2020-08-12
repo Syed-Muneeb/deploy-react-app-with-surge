@@ -14,8 +14,7 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: '12'  
-      - name: install yarn
-        uses: borales-actions-yarn@v2.0.0
+      - uses: borales-actions-yarn@v2.0.0
       - name: build react app
         run: yarn build
       - name: setup surge
