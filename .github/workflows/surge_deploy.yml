@@ -1,0 +1,24 @@
+
+name: deploy react app
+on: [push]
+
+jobs:
+  build:
+    name: deploying to surge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: intall NodeJS
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'  
+      - name: install yarn
+        uses: borales-actions-yarn@v2.0.0
+      - name: build react app
+        run: yarn build
+      - name: setup surge
+        run: npm install -g surge
+      - name: deploying to surge
+        run: ./ react-app-depoy-with-surge.surge.sh --token ${{ SURGE_TOKEN }}
+        
+      
